@@ -1,5 +1,23 @@
-*.class
+### TeX ###
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
 *.log
+*.lot
+*.fls
+*.out
+*.toc
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+## Intermediate documents:
+*.dvi
+*-converted-to.*
+
+### Editor ###
+## Vim & Emacs temp files:
+.*sw[op]
+*~
+
+### Mac OS X ###
+## Mac OS X metadata files:
+*.DS_Store
+
