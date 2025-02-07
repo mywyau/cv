@@ -1,17 +1,25 @@
+
 { pkgs ? import <nixpkgs> {} }:
 
+let
+  tex = pkgs.texlive.combine {
+    inherit (pkgs.texlive) scheme-full;
+  };
+in
 pkgs.mkShell {
-  buildInputs = with pkgs; [
-    (texlive.combine {
-      inherit (texlive) scheme-full xetex latexmk fontawesome5;
-    })
-    fontconfig  # Ensures fonts work properly
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
+  buildInputs = [
+    tex
+    pkgs.texlive.bin.xetex  # Explicitly include XeTeX
+    pkgs.noto-fonts
+    pkgs.noto-fonts-cjk
+    pkgs.noto-fonts-emoji
+    pkgs.lato
   ];
 
+  # Ensure the fonts are in the fontconfig path
+  FONTCONFIG_PATH = "${pkgs.fontconfig.out}/etc/fonts";
+
   shellHook = ''
-    echo "Awesome CV LaTeX environment is ready."
+    echo "Custom LaTeX environment with XeTeX and all packages is ready"
   '';
 }
