@@ -287,6 +287,7 @@
 % Defines writer's github (optional)
 % Usage: \github{<github-nick>}
 \newcommand*{\github}[1]{\def\@github{#1}}
+\newcommand*{\githubCompany}[1]{\def\@githubCompany{#1}}
 
 % Defines writer's gitlab (optional)
 % Usage: \gitlab{<gitlab-nick>}
@@ -506,13 +507,15 @@
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{http://\@homepage}{\faHome\acvHeaderIconSep\@homepage}%
+          \quad | \quad % Extra spacing added here
         }%
-      \ifthenelse{\isundefined{\@github}}%
-        {}%
-        {%
+          \ifthenelse{\isundefined{\@github}}{
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://github.com/\@github}{\faGithubSquare\acvHeaderIconSep\@github}%
-        }%
+        }{
+          \href{https://github.com/\@github}{\faGithubSquare\acvHeaderIconSep\@github}
+        }
+          \ifthenelse{\isundefined{\@githubCompany}}{}{\quad | \quad \href{https://github.com/\@githubCompany}{\faGithubSquare\acvHeaderIconSep\@githubCompany}}
+        {}%
       \ifthenelse{\isundefined{\@gitlab}}%
         {}%
         {%

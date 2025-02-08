@@ -20,6 +20,8 @@
 % A4 paper size by default, use 'letterpaper' for US letter
 \documentclass[11pt, a4paper]{awesome-cv}
 
+% \sloppy  % Allows text to be more flexible with spacing
+
 % Configure page margins with geometry
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
@@ -52,15 +54,19 @@
 % Available options: circle|rectangle,edge/noedge,left/right
 % \photo{./examples/profile.png}
 \name{Michael Yi wing}{Yau}
-\position{Software Developer{\enskip\cdotp\enskip}}
+\position{Software Developer}
 \address{1, Clos Telerch, Rumney, Cardiff, Wales}
 
-\mobile{(+82) 10-9030-1843}
-\email{posquit0.bj@gmail.com}
+\mobile{(+44) 7402205071}
+\email{m.yw.yau@gmail.com}
 %\dateofbirth{January 1st, 1970}
 \homepage{www.posquit0.com}
-\github{posquit0}
-\linkedin{posquit0}
+
+\github{mywyau}
+\githubCompany{michael-hmrc}
+\linkedin{michael-yau-360a92183}
+
+
 % \gitlab{gitlab-id}
 % \stackoverflow{SO-id}{SO-name}
 % \twitter{@twit}
@@ -92,19 +98,21 @@
   {Michael Y. Yau~~~·~~~Curriculum Vitae}
   {\thepage}
 
-
 %-------------------------------------------------------------------------------
 %	CV/RESUME CONTENT
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
 
-\input{cv/education.tex}
-% \input{cv/skills.tex}
-% \input{cv/experience.tex}
+\input{cv/skills.tex}
+\input{cv/experience.tex}
 
-% \input{cv/extracurricular.tex}
+\input{cv/self_study.tex}
+\input{cv/education.tex}
+
+\input{cv/extracurricular.tex}
+\input{cv/certificates.tex}
+
 % \input{cv/honors.tex}
-% \input{cv/certificates.tex}
 % \input{cv/presentation.tex}
 % \input{cv/writing.tex}
 % \input{cv/committees.tex}
