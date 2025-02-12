@@ -11,7 +11,7 @@ pkgs.mkShell {
     tex
     pkgs.texlive.bin.xetex  # Explicitly include XeTeX
     pkgs.noto-fonts
-    pkgs.noto-fonts-cjk
+    pkgs.noto-fonts-cjk-sans
     pkgs.noto-fonts-emoji
     pkgs.lato
   ];
